@@ -1,8 +1,9 @@
+
 /* for the main page  */
 #hero{
         display: flex;
         height: 785px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image.png');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('chai.png');
         background-size: cover;
         background-position: center;
         color: white;
@@ -45,12 +46,11 @@
     display: flex;  
     align-items: center;
     justify-content: space-between;     /*Creates a space between logo and the listed elements */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 25px;
+    padding: 10px 25px;
     background-color: var(--navbg);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /*Creates a shadow effect below navbar */
     position: fixed;    
+    top: 0;
     z-index: 100; 
 }
 
@@ -94,3 +94,6 @@
     transform: scale(1.06);
     transition: .3s;
 }
+
+
+
