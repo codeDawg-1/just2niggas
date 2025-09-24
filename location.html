@@ -9,7 +9,8 @@
 <body>
     <!---nav manu-->
     <section id="header">
-        <a href="#">The Cutting Tea</a>
+        <a href="index.html">The Cutting Tea</a>
+    
         <nav>
             <div>
                 <ul id="navbar">
@@ -22,3 +23,71 @@
             </div>
         </nav>
     </section>
+
+    <!-- Classy Location Section Start -->
+    <div class="location-header">Find Us Here</div>
+    <div class="map-container">
+        <!-- Replace the src below with your own Google Maps embed link -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.0111770357644!2d83.98691097852746!3d28.233196125509362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399595abbf22e6b7%3A0xa103dbc4929960b7!2sThe%20Cutting%20tea!5e0!3m2!1sen!2snp!4v1758726615343!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="location-info">
+        <h2>Our Address</h2>
+        <p>Shanti Marga, Pokhara, Kaski</p>
+        <p>Phone: +977-980-000-0000 | 061-000-000</p>
+        <p>
+            <a href="https://maps.app.goo.gl/uHsz5rhnJ1nHwzKY6?g_st=ic" target="_blank">
+                Open in Google Maps
+            </a>
+        </p>
+        <p>We’re open every day from 7am to 9pm. Visit us for the best tea experience!</p>
+    </div>
+    <style>
+        .location-header {
+            text-align: center;
+            margin-top: 80px;
+            color: #E32401;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+        .map-frame {
+            border: 0;
+            border-radius: 18px;
+            box-shadow: 0 0 30px #d3d8e2;
+            width: 90vw;
+            max-width: 700px;
+            height: 400px;
+        }
+        .location-info {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 18px #d3d8e2;
+            padding: 30px 20px;
+        }
+        .location-info h2 {
+            color: #1F2A44;
+            margin-bottom: 10px;
+        }
+        .location-info p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .location-info a {
+            color: #E32401;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .location-info a:hover {
+            text-decoration: underline;
+        }
+    </style>

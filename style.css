@@ -1,63 +1,37 @@
 
-/* for the main page  */
-#hero{
-        display: flex;
-        height: 785px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('chai.png');
-        background-size: cover;
-        background-position: center;
-        color: white;
-    }
-.hero-content {
-        margin-left: 80px;
-        margin-top: 200px;
-        max-width: 600px;
-    }
-.hero-content .logo{
-        color: var(--highlight);
-        font-style: italic;
-        font-weight: 800;
-    }
-.hero-content h1{
-        font-size: 65px;
-    }
-.hero-content p{
-        font-size: 25px;
-        margin: 20px 0;
-        margin-bottom: 30px;
-    }
-/* -------------------- */
-/* for every :where */
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    /*Declaring variables for colors */
-    --bgcolor: #e6ebf5;    
-    --highlight: #1F2A44;
-    --textColor: #555555;
-    --navbg: #d3d8e2;
-    --hover: #222222;
 }
-/* for nav bar */
+#navbar, #header, #navbar li, #navbar li a, #header a, footer, .footer-img, .footer-img img, .footer-content, .footer-content p, footer h1 {
+    font-family: 'Poppins', sans-serif;
+}
 #header{
     width: 100%;
     height: 50px;
-    display: flex;  
+    display: flex;
     align-items: center;
-    justify-content: space-between;     /*Creates a space between logo and the listed elements */
+    justify-content: space-between;
     padding: 10px 25px;
-    background-color: var(--navbg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /*Creates a shadow effect below navbar */
-    position: fixed;    
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    position: fixed;
     top: 0;
-    z-index: 100; 
+    z-index: 100;
+    transition: background 0.4s cubic-bezier(.77,0,.18,1);
+}
+#header.index-hero {
+    background-color: transparent;
+}
+#header.index-hero:hover {
+    background-color: #fff !important;
 }
 
 /* Header Logo */
 #header a{
     text-decoration: none;
-    color: var(--highlight);
+    color: rgb(234, 159, 91);
     font-weight: 1000;
     font-size: 22px;
 }
@@ -67,8 +41,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--navbg);
+    background-color: transparent;
     padding: 0 150px;
+    transition: background 0.4s cubic-bezier(.77,0,.18,1);
+}
+#header.index-hero:hover #navbar {
+    background-color: #fff !important;
 }
 
 /* Navbar List Items */
@@ -79,10 +57,10 @@
 
 /* Navbar Links */
 #navbar li a{
-    text-decoration: none;;
+    text-decoration: none;
     font-size: 18px;
     font-weight: 600;
-    color: var(--textColor);
+    color: #111;
     transition: 0.2s ease;
     position: relative;
 }
@@ -90,9 +68,43 @@
 /* Hover & Active State for Navbar Links */
 #navbar li a:hover,
 #navbar li:hover{
-    color: var(--hover);
+    color: #222;
     transform: scale(1.06);
     transition: .3s;
+}
+footer {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+}
+.footer-img {
+    width: 550px;
+    height: 100%;
+}
+.footer-img img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    margin: 20px;
+}
+.footer-content {
+    padding: 32px;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-content p {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0;
+}
+footer h1 {
+    font-size: 65px;
+    color: #e38039;
+    font-style: italic;
+    font-weight: 800;
 }
 
 

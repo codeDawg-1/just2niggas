@@ -9,7 +9,8 @@
 <body>
     <!---nav manu-->
     <section id="header">
-        <a href="#">The Cutting Tea</a>
+        <a href="index.html">The Cutting Tea</a>
+         
         <nav>
             <div>
                 <ul id="navbar">
@@ -21,6 +22,14 @@
                 </ul>
             </div>
         </nav>
+    </section>
+    <!-- Image Slider Start -->
+    <section id="image-slider" style="width: 100%;">
+        <div class="slider-container">
+            <div class="slide active"><img src="chai.png" alt="Slide 1"></div>
+            <div class="slide"><img src="edited landscape.png" alt="Slide 2"></div>
+            <div class="slide"><img src="image.png" alt="Slide 3"></div>
+        </div>
     </section>
     <section id="photo-only">
         <div class="photos">
@@ -44,6 +53,24 @@
             </div>
         </div>
     </section>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        function showSlide(idx) {
+            slides.forEach((s, i) => {
+                s.classList.remove('active', 'fade-in');
+                if (i === idx) {
+                    s.classList.add('active', 'fade-in');
+                }
+            });
+        }
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 3500); // 3.5 seconds per slide
+        // Initial show
+        showSlide(current);
+    </script>
 </body>
 <style>
     .photo-container {
@@ -61,6 +88,51 @@
         object-fit: cover;      /* makes image cover whole container */
         border-radius: 15px;    /* keeps rounded corners */
         display: block;         /* removes inline gaps */
+    }
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 555px;
+        margin: 50px auto;
+        overflow: hidden;
+        border-radius: 15px;
+        background-color: #d3d8e2;
+        box-shadow: 0 0 30px 5px #f7e8a4, 0 0 10px 2px #d3d8e2;
+    }
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 1.5s cubic-bezier(.77,0,.18,1);
+        z-index: 1;
+    }
+    .slide.active {
+        opacity: 1;
+        z-index: 2;
+    }
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        display: block;
+        box-shadow: 0 0 40px 10px #f7e8a4;
+        animation: pop 1.5s cubic-bezier(.77,0,.18,1);
+    }
+    @keyframes pop {
+        0% { transform: scale(1.08) rotate(-2deg); filter: brightness(1.2); }
+        60% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+        100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+    }
+    .fade-in {
+        animation: fadeIn 1.5s;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
    
 </style>
